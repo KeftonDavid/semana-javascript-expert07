@@ -33,6 +33,12 @@ a {
     text-decoration: none;
 }
 
+#hands {
+    pointer-events: none;
+    position: fixed;
+    z-index: 999;
+}
+
 .content {
     margin: 0;
     padding: 0;
