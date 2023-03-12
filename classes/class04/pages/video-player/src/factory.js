@@ -38,8 +38,10 @@ async function getWorker() {
   setTimeout(() => worker.onmessage({ data: 'READY' }), 500);
   return workerMock
 }
-
+const view = new View()
+view.setVideoSrc(`${rootPath}/assets/video.mp4`)
 const worker = await getWorker()
+
 
 const camera = await Camera.init()
 const [rootPath] = window.location.href.split('/pages/')
@@ -48,7 +50,7 @@ const factory = {
     return Controller.initialize({
       view: new View(),
       worker,
-      camera
+      camera,
     })
   }
 }
